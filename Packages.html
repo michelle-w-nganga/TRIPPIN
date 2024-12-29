@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <title>Your Packages</title>
+    </head>
+    <header>
+        <img src="pic.png" width="200" height="140">
+        <center><h1 style="font-size:100px">TRIPPIN'</h1></center>
+    </header>
+    <center><body>
+        <p><h2>COMPANY NAME</h2></p>
+        <p><h2>Your Packages</h2></p>
+        <ul id="packages-List">
+
+        </ul>
+        <button onclick="addPackageFun()">Add Package</button>
+        <button onclick="logOutFun()">Log Out</button>
+    
+        <script type="text/javascript">
+            let packages=[
+                {name:"Camp Samburu",destination:"Samburu",price:15000},
+                {name:"Camp Jangwani",destination:"Nyeri",price:12000},
+            ];
+    //display package        
+            function displayPackage(){
+                let packagesList = document.getElementById("packages-List");
+                packagesList.innerHTML = '';
+                packages.forEach(function(package,index){
+                    let packageItem = document.createElement("li");
+                    packageItem.innerHTML = `${package.name}: Destination:${package.destination}  Price(Ksh.):${package.price}`;
+                    breakTag=document.createElement("br");
+                    packageItem.appendChild(breakTag);
+                    let editButton=document.createElement("button");
+                    editButton.textContent="Edit";
+                    editButton.onclick=function(){
+                        editFun(index);
+                    };
+                    packageItem.appendChild(editButton);
+                    let feedbackButton=document.createElement("button");
+                    feedbackButton.textContent="Feedback";
+                    feedbackButton.onclick=function(){
+                        feedbackFun(index);
+                    }
+                    packageItem.appendChild(feedbackButton);
+                    let breakTag2=document.createElement("br");
+                    packageItem.appendChild(breakTag2);
+                    let deleteButton=document.createElement("button");
+                    deleteButton.textContent="Delete Package";
+                    deleteButton.onclick=function(){
+                        deleteFun(index);
+                    }
+                    packageItem.appendChild(deleteButton);
+                    packagesList.appendChild(packageItem);
+                });
+            }
+            displayPackage();
+    //edit        
+            function editFun(index){
+                let packageItem = packages[index];
+                name = prompt("Enter new package name");
+                if(name!==null && name.length<=30){
+                    packageItem.name=name;
+                destination = prompt("Enter new package destination");
+                if(destination!==null && destination.length<=30){
+                    packageItem.destination=destination;
+                price = prompt("Enter new package price");
+                if(!isNaN(price)){
+                    packageItem.price=parseInt(price);
+                displayPackage();
+                }else{alert("Enter valid Price")}}else{alert("Package destination cannot exceed 30 characters!")}}else{alert("Package name cannot exceed 30 characters!")};
+            }
+    //feedback       
+            function feedbackFun(index){
+                    alert("Redirecting...")
+            }
+    //delete        
+            function deleteFun(index){
+                let newPackages=packages;
+                let confirmed=confirm("You are about to delete a package! Are you sure?")
+                if(confirmed){
+                newPackages.splice(index,1);
+                displayPackage();
+                }else{alert("Canceled")}
+
+            }
+    //add Package        
+            function addPackageFun(){
+                let name=prompt("Enter Name of package");
+                if(name!==null && name.length<=30){
+                let destination=prompt("Enter Destination of package");
+                if(destination!==null && destination.length<=30){
+                let price=prompt("Enter Price of package");
+                if(price!==null && !isNaN(price)){
+                packages.push({name:name, destination:destination, price:parseFloat(price)});
+                displayPackage();
+            }else{alert("Enter valid Price")}}else{alert("Package destination cannot exceed 30 characters!")}}else{alert("Package name cannot exceed 30 characters!")}
+            }
+    //log out        
+            function logOutFun(){
+                alert("Logging out...")
+            }
+
+        </script>
+    </body></center>
+
+</HTML>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>homepage</title>
+        <style>
+            p{
+                background-color: white;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size:60;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //earnings
+            function earnings(){
+                var earnings = document.getElementById('earnings');
+                earnings.value=sum();
+            }
+
+            function sum(){
+                let num=[12000,13000,14000];
+                var sum=0;
+                for(var i=0;i<num.length;i++){
+                    sum+=num[i];
+                }
+                 console.log(sum);
+                 return sum;
+            }
+
+            //company name
+            function change() {
+                const companyName=document.querySelectorAll('#name .companyName');
+                console.log(companyName.textContent);
+                let newName = prompt("Enter new Company Name");
+                if (newName != null) {
+                document.getElementById('companyName').innerHTML= newName;
+                alert("Company name updated successfully!");
+                }else{
+                    alert("You must enter a name");
+                } 
+            }
+
+            //password
+            function updateTextBox(){
+                var txtbox=document.getElementById('password');
+                txtbox.value=edit();
+            }
+            function edit() {
+                const password=document.getElementById('password');
+                console.log(password.textContent);
+                let newPassword = prompt("Enter new password");
+                if (newPassword.length>=8 && newPassword.length<=16) {
+                newPassword=masking(newPassword);
+                alert("Password updated successfully!");
+                return newPassword;
+                }else{
+                    alert("You must enter a VALID password (Size should be between 8 and 16 characters)");
+                } 
+            }
+            //Password Masking
+            function masking(newPassword){
+                let hiddenPassword=newPassword.replaceAll(/./g,"*");
+                console.log(hiddenPassword.textContent);
+                return hiddenPassword;
+                }
+            
+            //withdraw
+            function withdraw(){
+                var amount;
+                amount=parseFloat(prompt("Enter amount to withdraw"));
+                if(!isNaN(amount)&&amount>0){
+                var earnings=sum();
+                if(amount<=earnings){
+                    alert("Success");
+                }else{
+                    alert("Error: Insufficient funds!");
+                }}else{
+                    alert("Error: Invalid input!");
+                }
+            }
+
+            //analytics
+            function viewanalytics(){
+                alert("Redirecting...");
+
+            }
+
+            //logout
+            function logout(){
+                alert("Logging out...");
+
+            }
+            //delete account
+            function deleteaccount(){
+                var confirmed = confirm("Are you sure you want to delete your account? This action cannot be undone.");
+                if (confirmed) {
+                    // Clear or reset sensitive information
+                    document.getElementById('companyName').innerHTML = "Account Deleted";
+                    document.getElementById('password').value = "Account Deleted";
+                    document.getElementById('earnings').innerHTML = "0";
+                    alert("Your account has been deleted successfully.");
+                } else {
+                    alert("Account deletion canceled.");
+                }
+                
+            }
+
+        </script>
+    <header>
+        <img src="pic.png" alt="logo" width="300" height="200">
+    </header>
+    <header><center><h1 style="font-size:80px;">TRIPPIN'</h1></header>
+    
+    <!--company name-->
+    <div id="name"><center>
+    <p><label id="companyName">COMPANY NAME </label><button onclick="change()">change</button></p>
+    </div>
+    
+    <!--password-->
+    <div id="Code"><center>
+    <label>Password: <input type="text-field" id="password" value="********" ></label>
+    <button onclick="updateTextBox()">Edit</button>
+    </div>
+
+    <!--money-->
+    <div id="money"><center>
+    <p>Earnings:</p><button onclick=alert(sum())>Earnings</button><p id="earnings"></p>
+    </div>
+    <div><center>
+    <input type="button" id="withdraw" value="Withdraw" onclick="withdraw()">
+    </div>
+
+    <!--analytics-->
+    <div id="analytics"><center>
+    <p><button onclick="viewanalytics()">View analytics</button></p>
+    </div>
+
+    <!--delete account-->
+    <div id="delete"><center>
+        <p><button onclick="deleteaccount()">Delete Account</button></p>
+    </div>
+
+    <!--log out-->
+    <div id="logout"><center>
+        <button onclick="logout()">Log out</button>
+    </div>
+    </body>
+
+</html>
