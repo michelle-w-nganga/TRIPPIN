@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    font-family: 'Caesar Dressing', serif;
+    background: linear-gradient(to bottom, #F97C0F 18%, #D8B339 41%, #1763B9 62%);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+  }
+  
+  .header {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    margin: 5px 0;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    font-family: 'Caesar Dressing', serif;
+  }
+  
+  .package-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .package-item {
+    margin: 20px 0;
+    background: linear-gradient(to bottom, #F97C0F, #1763B9); 
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .package-item:hover {
+    box-shadow: 0 0 10px 2px #ffbd3e; 
+  }
+  
+  .package-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .package-item p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .package-item .features {
+    margin-top: 10px;
+  }
+  
+  .package-item .features ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .package-item button {
+    margin-right: 10px;
+    padding: 8px 15px;
+    background-color: #e27704;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: 'Caesar Dressing', serif;;
+  }
+  
+  .package-item button:hover {
+    background-color: #d7a032;
+  }
+  
+  .actions {
+    text-align: center;
+    width: 100%;
+  }
+  
+  
+  .feedback-stars {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+  
+  .star {
+    font-size: 20px;
+    color: #dcdcdc;
+    cursor: pointer;
+  }
+  
+  .star.filled {
+    color: #ffbd3e; 
+  }
+  
+  .star:hover {
+    color: #ffd700; 
+  }
+
+
+.actions .btn {
+    background: linear-gradient(to right, blue, orange); /* Apply the same gradient as .elements */
+    border-radius: 10px;
+    width: 300px;
+    padding: 15px;
+    margin-bottom: 10px;
+    color: black;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    font-size: 1rem;
+    font-family: 'Caesar Dressing', serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.actions .btn:hover {
+    background-color: white;
+    box-shadow: 0 0 10px 2px white;
+    animation: neon-glow 1.5s infinite linear;
+  }
+  @keyframes neon-glow {
+    0% {
+      box-shadow: 0 0 20px blue, 0 0 30px orange, 0 0 40px blue;
+    }
+    25% {
+      box-shadow: 0 0 20px orange, 0 0 30px blue, 0 0 40px orange;
+    }
+    50% {
+      box-shadow: 0 0 20px blue, 0 0 30px orange, 0 0 40px blue;
+    }
+    75% {
+      box-shadow: 0 0 20px orange, 0 0 30px blue, 0 0 40px orange;
+    }
+    100% {
+      box-shadow: 0 0 20px blue, 0 0 30px orange, 0 0 40px blue;
+    }
+  }
+  
+
+  
+  @media (max-width: 768px) {
+    .package-item {
+      padding: 10px;
+    }
+  
+    .package-item button {
+      padding: 6px 12px;
+    }
+  
+    .btn {
+      width: 100%;
+      padding: 12px;
+    }
+  }
+  
