@@ -42,7 +42,7 @@ main {
   height: 25px;
   padding: 15px;
   margin-bottom: 10px;
-  color: #fff;
+  color: black;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -52,7 +52,6 @@ main {
 .elements:hover {
   background-color: white;
   box-shadow: 0 0 10px 2px white;
-  animation: neon-glow 1.5s infinite linear;
 }
 
 
@@ -87,23 +86,4 @@ main {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-
-@keyframes neon-glow {
-  0% {
-    box-shadow: 0 0 20px blue, 0 0 30px orange, 0 0 40px blue;
-  }
-  25% {
-    box-shadow: 0 0 20px orange, 0 0 30px blue, 0 0 40px orange;
-  }
-  50% {
-    box-shadow: 0 0 20px blue, 0 0 30px orange, 0 0 40px blue;
-  }
-  75% {
-    box-shadow: 0 0 20px orange, 0 0 30px blue, 0 0 40px orange;
-  }
-  100% {
-    box-shadow: 0 0 20px blue, 0 0 30px orange, 0 0 40px blue;
-  }
 }
