@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Packages - Trippin'</title>
+    <link rel="stylesheet" href="search.css" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@latest/dist/email.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">Trippin'</h1>
+      <h2 class="subtitle">Choose Your Travel Package</h2>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by destination or name of package"
+      />
+    </header>
+
+    <main>
+      <div id="package-list" class="package-list"></div>
+      <div id="bookingModal" style="display: none">
+        <h3 id="packageName"></h3>
+        <p>Base Price Per Person: Ksh. <span id="basePrice">0</span></p>
+        <label for="numPeople">Number of People:</label>
+        <input
+          type="number"
+          id="numPeople"
+          min="1"
+          placeholder="Enter the number of people"
+          onchange="updatePrice()"
+        />
+        <p>Total Price: Ksh. <span id="totalPrice">0</span></p>
+        <button onclick="confirmBooking()">Confirm Booking</button>
+        <button onclick="closeModal()">Cancel</button>
+      </div>
+    </main>
+
+    <script src="search.js"></script>
+  </body>
+</html>
