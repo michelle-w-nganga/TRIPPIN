@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trippin' - User Account Page</title>
+    <link rel="stylesheet" href="useraccount.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">Trippin'</h1>
+      <h2 class="subtitle">User Account Page</h2>
+      <h3>Hello,</h3>
+      <h3 id="companyname">[username]</h3>
+    </header>
+    <main>
+      <div class="elements" onclick="change()">Edit username</div>
+      <br />
+      <div class="elements" onclick="editPassword()">Edit password</div>
+      <br />
+      <div class="elements" onclick="viewFavorites()">View Favorites</div>
+      <br />
+      <div class="elements" onclick="viewHistory()">View History</div>
+      <br />
+      <div id="delete" class="elements" onclick="deleteAccount ()">
+        Delete Account
+      </div>
+      <br />
+      <div id="logout" class="elements" onclick="logOut()">Log Out</div>
+      <br />
+    </main>
+    <div id="alertModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">×</span>
+        <p id="modalMessage"></p>
+      </div>
+    </div>
+
+    <script src="useraccount.js"></script>
+  </body>
+</html>
